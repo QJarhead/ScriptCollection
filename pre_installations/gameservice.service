@@ -1,0 +1,10 @@
+[Unit]
+Description=McMyAdmin
+[Service] 
+WorkingDirectory=/media/disk1/service
+User=tim_c_lid
+ExecStart=/media/disk1/service/start.sh
+ExecStop=/media/disk1/service/stop.sh
+ExecStop=/bin/sleep 10
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,9 @@
+./
+/is_package_installed screen.sh
+if []
+then
+  echo "screen is installed!"
+else
+    echo "screen is installed"
+    sudo apt install screen -y
+fi

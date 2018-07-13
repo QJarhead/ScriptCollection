@@ -1,0 +1,10 @@
+[Unit]
+Description=McMyAdmin
+[Service] 
+WorkingDirectory=/home/minecraft/McMyAdmin 
+User=minecraft 
+ExecStart=/usr/bin/screen -DmS mc-mcma ./MCMA2_Linux_x86_64 -nonotice -setpass !Start123
+ExecStop=/usr/bin/screen -p 0 -S mc-mcma -X eval 'stuff "/quit"\\015' 
+ExecStop=/bin/sleep 10
+[Install]
+WantedBy=multi-user.target

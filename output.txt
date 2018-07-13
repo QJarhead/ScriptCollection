@@ -1,0 +1,9 @@
+● mcmyadmin.service - McMyAdmin
+   Loaded: error (Reason: Invalid argument)
+   Active: inactive (dead)
+
+Jul 02 19:56:42 kb-ark-ragnarok systemd[1]: /etc/systemd/system/mcmyadmin.service:8: Missing '='.
+Jul 02 19:56:42 kb-ark-ragnarok systemd[1]: /etc/systemd/system/mcmyadmin.service:8: Missing '='.
+Jul 02 19:57:10 kb-ark-ragnarok systemd[1]: /etc/systemd/system/mcmyadmin.service:8: Missing '='.
+Jul 02 19:59:10 kb-ark-ragnarok systemd[1]: /etc/systemd/system/mcmyadmin.service:8: Missing '='.
+Jul 02 19:59:38 kb-ark-ragnarok systemd[1]: /etc/systemd/system/mcmyadmin.service:8: Missing '='.
