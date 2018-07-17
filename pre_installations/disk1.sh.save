@@ -1,0 +1,30 @@
+#!/bin/bash
+fstab=/etc/fstab
+
+if [[ $(grep -q "poky-disc" "$fstab") ]]
+# forgiving me for being a bit of over-rigorous, you might want to change this matching word, as below, 'poky-disc' merely a comment, not exactly a config line, so
+thenecho o # Create a new empty DOS partition table
+echo n # Add a new partition
+echo p # Primary partition
+echo 1 # Partition number
+echo   # First sector (Accept default: 1)
+echo   # Last sector (Accept default: varies)
+echo w # Write changes
+) | sudo fdisk /dev/sdb
+no | mkfs.ext4 /dev/sdb1
+  
+  echo "#poky-disc" >> /etc/fstab
+    echo "/dev/sdb1 /media/poky ext4 defaults 0 2" >> /etc/fstab
+else
+    echo "Entry in fstab exists."
+fi
+(
+echo o # Create a new empty DOS partition table
+echo n # Add a new partition
+echo p # Primary partition
+echo 1 # Partition number
+echo   # First sector (Accept default: 1)
+echo   # Last sector (Accept default: varies)
+echo w # Write changes
+) | sudo fdisk /dev/sdb
+no | mkfs.ext4 /dev/sdb1
