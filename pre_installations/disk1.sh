@@ -7,3 +7,4 @@ echo   # First sector (Accept default: 1)
 echo   # Last sector (Accept default: varies)
 echo w # Write changes
 ) | sudo fdisk /dev/sdb
+mkfs.ext4 /dev/sdb1
