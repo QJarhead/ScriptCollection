@@ -22,3 +22,4 @@ sudo chmod +x /media/disk1/darkandlight/servername.ssh
 echo "serverpassword="$serverpassword > /media/disk1/darkandlight/serverpassword.ssh
 sudo chmod +x /media/disk1/darkandlight/serverpassword.ssh
 sudo unzip -o pre_installations/zipfiles.zip -d /media/disk1/darkandlight/DNL/Binaries/Win64/
+sudo service gameservice start
