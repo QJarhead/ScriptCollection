@@ -12,5 +12,5 @@ else
     sudo apt-get update
     sudo apt-get dist-upgrade -y
     DEBAN_FRONTEND=noninteractive
-    apt -yq install steamcmd
+    sudo apt -yq install steamcmd
 fi

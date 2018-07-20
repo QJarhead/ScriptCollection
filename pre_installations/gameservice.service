@@ -1,8 +1,8 @@
 [Unit]
-Description=McMyAdmin
-[Service] 
+Description=GameService
+[Service]
+LimitNOFILE=500000
 WorkingDirectory=/media/disk1/service
-User=tim_c_lid
 ExecStart=/media/disk1/service/start.sh
 ExecStop=/media/disk1/service/stop.sh
 ExecStop=/bin/sleep 10
