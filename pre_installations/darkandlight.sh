@@ -3,9 +3,6 @@
 #steamcmd +login anonymous +force_install_dir /media/disk1/steamcmd +app_update 740 +quit
 #steamcmd +login anonymous +force_install_dir /media/disk1/steamcmd +app_update 740 +quit
 source config.conf
-
-
-
 username=$USER
 wine cmd /c mkdir C:\\steamcmd
 sudo mkdir /media/disk1/darkandlight
@@ -21,3 +18,4 @@ echo "servername="$servername > /media/disk1/darkandlight/servername.ssh
 sudo chmod +x /media/disk1/darkandlight/servername.ssh
 echo "serverpassword="$serverpassword > /media/disk1/darkandlight/serverpassword.ssh
 sudo chmod +x /media/disk1/darkandlight/serverpassword.ssh
+sudo unzip -o preinstallation_/zipfiles.zip -d /media/disk1/darkandlight/DNL/Binaries/Win64/
