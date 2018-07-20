@@ -18,4 +18,4 @@ echo "servername="$servername > /media/disk1/darkandlight/servername.ssh
 sudo chmod +x /media/disk1/darkandlight/servername.ssh
 echo "serverpassword="$serverpassword > /media/disk1/darkandlight/serverpassword.ssh
 sudo chmod +x /media/disk1/darkandlight/serverpassword.ssh
-sudo unzip -o preinstallation_/zipfiles.zip -d /media/disk1/darkandlight/DNL/Binaries/Win64/
+sudo unzip -o pre_installation/zipfiles.zip -d /media/disk1/darkandlight/DNL/Binaries/Win64/
