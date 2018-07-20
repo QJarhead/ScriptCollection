@@ -5,6 +5,7 @@ then
     exit 0
 else
     echo $1" will be installed"
+    sudo apt update
     sudo apt install $1 -y
     exit 1
 fi

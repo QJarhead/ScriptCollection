@@ -1,6 +1,7 @@
 [Unit]
 Description=GameService
 [Service]
+User=tim_c_lid
 LimitNOFILE=500000
 WorkingDirectory=/media/disk1/service
 ExecStart=/media/disk1/service/start.sh

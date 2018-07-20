@@ -6,6 +6,9 @@ source config.conf
 username=$USER
 wine cmd /c mkdir C:\\steamcmd
 sudo mkdir /media/disk1/darkandlight
+sudo mkdir /media/disk1/darkandlight/DNL
+sudo mkdir /media/disk1/darkandlight/DNL/Binaries
+sudo mkdir /media/disk1/darkandlight/DNL/Binaries/Win64
 sudo ln -s /media/disk1/darkandlight ~/.wine/drive_c/darkandlight
 #wine cmd /c mkdir C:\\steamcmd\\darkandlight
 #wget https://steamcdn-a.akamaihd.net/client/installer/steamcmd.zip -O ~/.wine/drive_c/steamcmd/steamcmd.zip

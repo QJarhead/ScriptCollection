@@ -17,7 +17,7 @@ then
     sudo mkdir /media/disk1
     sudo mount /dev/sdb1 /media/disk1
     echo "#Disk1" | sudo tee --append /etc/fstab
-    echo "/dev/sdb1 /media/disk1 ext4 defaults 0 2" | sudo tee --append /etc/f$
+    echo "/dev/sdb1 /media/disk1 ext4 defaults 0 2" | sudo tee --append /etc/fstab
 else
     echo "Disk1 already installed"
 fi
