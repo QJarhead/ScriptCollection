@@ -2,6 +2,28 @@
 #echo "run steamcmd darkandlight"
 #steamcmd +login anonymous +force_install_dir /media/disk1/steamcmd +app_update 740 +quit
 #steamcmd +login anonymous +force_install_dir /media/disk1/steamcmd +app_update 740 +quit
+
+
+LINE="fs.file-max=10000"
+FILE=/etc/fstab
+if ! sudo grep -qF "$LINE" /etc/fstab
+then
+    sudo echo "fs.file-max=10000" >> /etc/sysctl.conf
+else
+    echo "Entry in fstab exists."
+fi
+
+LINE="* soft nofile 10000"
+FILE=/etc/fstab
+if ! sudo grep -qF "$LINE" /etc/fstab
+then
+    sudo echo "* soft nofile 10000" >> /etc/security/limits.conf
+    sudo echo "* soft nofile 10000" >> /etc/security/limits.conf
+else
+    echo "Entry in fstab exists."
+fi
+
+
 username=$USER
 wine cmd /c mkdir C:\\steamcmd
 sudo mkdir /media/disk1/darkandlight
