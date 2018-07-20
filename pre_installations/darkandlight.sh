@@ -2,26 +2,8 @@
 #echo "run steamcmd darkandlight"
 #steamcmd +login anonymous +force_install_dir /media/disk1/steamcmd +app_update 740 +quit
 #steamcmd +login anonymous +force_install_dir /media/disk1/steamcmd +app_update 740 +quit
+source config.conf
 
-
-LINE="fs.file-max=10000"
-FILE=/etc/fstab
-if ! sudo grep -qF "$LINE" /etc/fstab
-then
-    sudo echo "fs.file-max=10000" >> /etc/sysctl.conf
-else
-    echo "Entry in fstab exists."
-fi
-
-LINE="* soft nofile 10000"
-FILE=/etc/fstab
-if ! sudo grep -qF "$LINE" /etc/fstab
-then
-    sudo echo "* soft nofile 10000" >> /etc/security/limits.conf
-    sudo echo "* soft nofile 10000" >> /etc/security/limits.conf
-else
-    echo "Entry in fstab exists."
-fi
 
 
 username=$USER
@@ -35,3 +17,7 @@ sudo chown -R $username:$username /media/disk1/darkandlight
 #steamcmd +login anonymous +force_install_dir /media/disk1/darkandlight +app_update 630230 validate +quit
 #wine c:\\steamcmd\\steamcmd.exe +force_install_dir C:\\steamcmd\\darkandlight\\ +login anonymous +app_update 630230 validate +quit
 #https://steamcommunity.com/linkfilter/?url=https://steamcdn-a.akamaihd.net/client/installer/steamcmd.zip
+echo "servername="$servername > /media/disk1/darkandlight/servername.ssh
+sudo chmod +x /media/disk1/darkandlight/servername.ssh
+echo "serverpassword="$serverpassword > /media/disk1/darkandlight/serverpassword.ssh
+sudo chmod +x /media/disk1/darkandlight/serverpassword.ssh
