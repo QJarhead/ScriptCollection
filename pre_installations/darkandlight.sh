@@ -10,6 +10,16 @@ sudo mkdir /media/disk1/darkandlight/DNL
 sudo mkdir /media/disk1/darkandlight/DNL/Binaries
 sudo mkdir /media/disk1/darkandlight/DNL/Binaries/Win64
 sudo ln -s /media/disk1/darkandlight ~/.wine/drive_c/darkandlight
+
+LINE="* hard nofile 10000"
+FILE=/etc/security/limits.conf
+if ! grep -qF "$LINE" /etc/security/limits.conf
+then
+    echo "* hard nofile 10000" | sudo tee --append /etc/fstab
+else
+    echo "FileLimit already set"
+fi
+
 #wine cmd /c mkdir C:\\steamcmd\\darkandlight
 #wget https://steamcdn-a.akamaihd.net/client/installer/steamcmd.zip -O ~/.wine/drive_c/steamcmd/steamcmd.zip
 #unzip -o ~/.wine/drive_c/steamcmd/steamcmd.zip -d ~/.wine/drive_c/steamcmd/steamcmd.exe
