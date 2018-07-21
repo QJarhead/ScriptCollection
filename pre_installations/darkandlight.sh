@@ -20,9 +20,11 @@ else
     echo "FileLimit already set"
 fi
 
-sudo wget https://www.ryanschulze.net/files/rcon.c -O /media/disk1/service/rcon.c
+#sudo wget https://www.ryanschulze.net/files/rcon.c -O /media/disk1/service/rcon.c
 
-sudo gcc -o /media/disk1/service/rcon /media/disk1/service/rcon.c
+#sudo gcc -o /media/disk1/service/rcon /media/disk1/service/rcon.c
+
+sudo cp services/rcon /media/disk1/service/rcon
 
 #wine cmd /c mkdir C:\\steamcmd\\darkandlight
 #wget https://steamcdn-a.akamaihd.net/client/installer/steamcmd.zip -O ~/.wine/drive_c/steamcmd/steamcmd.zip
@@ -31,9 +33,11 @@ sudo chown -R $username:$username /media/disk1/darkandlight
 #steamcmd +login anonymous +force_install_dir /media/disk1/darkandlight +app_update 630230 validate +quit
 #wine c:\\steamcmd\\steamcmd.exe +force_install_dir C:\\steamcmd\\darkandlight\\ +login anonymous +app_update 630230 validate +quit
 #https://steamcommunity.com/linkfilter/?url=https://steamcdn-a.akamaihd.net/client/installer/steamcmd.zip
-echo "servername="$servername > /media/disk1/darkandlight/servername.ssh
-sudo chmod +x /media/disk1/darkandlight/servername.ssh
-echo "serverpassword="$serverpassword > /media/disk1/darkandlight/serverpassword.ssh
-sudo chmod +x /media/disk1/darkandlight/serverpassword.ssh
+source config.conf
+
+sudo touch /media/disk1/service/config.conf
+echo "servername="$servername | sudo tee /media/disk1/service/config.conf
+echo "serverpassword="$serverpassword | sudo tee --append /media/disk1/service/config.conf
+
 sudo unzip -o pre_installations/zipfiles.zip -d /media/disk1/darkandlight/DNL/Binaries/Win64/
 sudo service gameservice start
