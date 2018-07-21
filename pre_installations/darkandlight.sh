@@ -20,6 +20,10 @@ else
     echo "FileLimit already set"
 fi
 
+sudo wget https://www.ryanschulze.net/files/rcon.c -O /media/disk1/service/rcon.c
+
+sudo gcc -o /media/disk1/service/rcon /media/disk1/service/rcon.c
+
 #wine cmd /c mkdir C:\\steamcmd\\darkandlight
 #wget https://steamcdn-a.akamaihd.net/client/installer/steamcmd.zip -O ~/.wine/drive_c/steamcmd/steamcmd.zip
 #unzip -o ~/.wine/drive_c/steamcmd/steamcmd.zip -d ~/.wine/drive_c/steamcmd/steamcmd.exe

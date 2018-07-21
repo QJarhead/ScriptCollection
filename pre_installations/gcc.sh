@@ -1,0 +1,1 @@
+pre_installations/install_package.sh gcc
